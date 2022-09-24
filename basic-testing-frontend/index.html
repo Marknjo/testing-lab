@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Testing Basics</title>
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <script type="module" defer src="app.js"></script>
+  <style>
+    html {
+      font-family: sans-serif;
+    }
+
+    body {
+      margin: 2rem;
+    }
+
+    div,
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      text-transform: capitalize;
+      text-align: center;
+      color: saddlebrown;
+      font-size: 1.6rem;
+    }
+
+    .container {
+      max-width: 40vw;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: column;
+
+      padding: 2rem 2rem 3.6rem;
+      border: 1px solid saddlebrown;
+      border-radius: 0.5rem;
+    }
+
+    form {
+      margin: 0 auto;
+    }
+
+    #result {
+      margin: 0 auto;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>A basic calculator</h1>
+    <form action="/calculate" method="POST" class="form">
+      <div>
+        <label for="num1">First Number</label>
+        <input id="num1" name="num1" type="numeric" />
+      </div>
+      <div>
+        <label for="num2">Second Number</label>
+        <input id="num2" name="num2" type="numeric" />
+      </div>
+      <button>Calculate</button>
+    </form>
+    <div id="result"></div>
+  </div>
+</body>
+
+</html>
