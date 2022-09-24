@@ -10,7 +10,9 @@ Repo for learning and experimenting with testing libraries.
 
 Current Projects in this repo
 
-1. Simple NodeJs App - kub-nodejs-app
+1. Basic testing frontend
+2. basic testing nodejs
+3. vite template - a vite template for starting existing projects (incase you may need to generate a project by yourself)
 
 ## :anger: Requirement
 
