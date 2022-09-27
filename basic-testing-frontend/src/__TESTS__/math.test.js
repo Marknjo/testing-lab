@@ -2,9 +2,16 @@ import { it, expect } from "vitest";
 import { add } from "../math";
 
 it("should summarize all number values in an array", () => {
-  const result = add([1, 2, 3]);
+  /// Arrange
+  const values = [1, 2];
 
-  expect(result).toBe(6);
+  const sumValues = values.reduce((curr, next) => curr + next, 0);
+
+  /// Act
+  const result = add(values);
+
+  /// Assert
+  expect(result).toBe(sumValues);
 });
 
 it.todo("should throw an error if supplied values is not an array");
