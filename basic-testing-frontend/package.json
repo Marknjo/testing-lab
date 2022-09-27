@@ -4,8 +4,9 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "vitest --run --reporter verbose",
+    "test": "vitest run --reporter verbose",
     "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
@@ -15,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@vitest/coverage-c8": "^0.23.4",
     "vite": "^3.1.0",
     "vitest": "^0.23.4"
   }
