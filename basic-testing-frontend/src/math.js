@@ -5,7 +5,7 @@ export function add(numbers) {
     if (isNaN(number)) {
       return NaN;
     }
-    sum += number;
+    sum += Number(number);
   }
   return sum;
 }
