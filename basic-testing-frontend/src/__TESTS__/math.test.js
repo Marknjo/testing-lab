@@ -34,6 +34,16 @@ it("should return a correct sum if provided array of values can be cast to numbe
   /// Assert
   expect(result).toBe(sumValues);
 });
+
+it("should throw an error if values are not array of numbers", () => {
+  /// Arrange
+  const value = "value";
+
+  /// Act
+  const resultFn = () => add(value);
+
+  /// Assert
+  expect(resultFn).toThrow();
+});
 it.todo("should accept only array of number");
-it.todo("should throw if supplied array is not array of numbers");
 it.todo("should return a number");
