@@ -46,12 +46,18 @@ it("should throw an error if values are not array of numbers", () => {
   expect(resultFn).toThrow();
 });
 
-it.todo("should return 0 if empty array is provided", () => {
+it("should return 0 if empty array is provided", () => {
   const value = [];
 
   const results = add(value);
 
   expect(results).toBe(0);
+});
+
+it("should throw if no value is provided to the function", () => {
+  const resultsFn = () => add();
+
+  expect(resultsFn).toThrow("Array of number not present!");
 });
 
 it.todo("should return a number");

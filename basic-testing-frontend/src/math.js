@@ -1,4 +1,8 @@
 export function add(numbers) {
+  if (!numbers) {
+    throw new Error("Array of number not present!");
+  }
+
   if (!Array.isArray(numbers)) {
     throw new Error("Expects array of numbers");
   }
