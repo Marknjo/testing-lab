@@ -60,4 +60,13 @@ it("should throw if no value is provided to the function", () => {
   expect(resultsFn).toThrow("Array of number not present!");
 });
 
-it.todo("should return a number");
+it("should throw an error if multiple arguments is provided", () => {
+  const value1 = 1;
+  const value2 = 2;
+
+  const resultsFn = () => add(value1, value2);
+
+  expect(resultsFn).toThrowError(
+    "Too many arguments provided! Expects an array of numbers."
+  );
+});
