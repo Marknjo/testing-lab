@@ -45,5 +45,13 @@ it("should throw an error if values are not array of numbers", () => {
   /// Assert
   expect(resultFn).toThrow();
 });
-it.todo("should accept only array of number");
+
+it.todo("should return 0 if empty array is provided", () => {
+  const value = [];
+
+  const results = add(value);
+
+  expect(results).toBe(0);
+});
+
 it.todo("should return a number");
