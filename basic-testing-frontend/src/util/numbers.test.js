@@ -1,12 +1,12 @@
 import { it, expect } from "vitest";
 import { transformToNumber } from "./numbers";
 
-it.todo("should convert a number to a string", () => {
+it("should convert a string to a number", () => {
   const num = "1";
 
   const result = transformToNumber(num);
 
-  expect(result).toBe("number");
+  expect(result).toBeTypeOf("number");
 });
 
 it("should throw if a argument value is not a number or type string number", () => {
