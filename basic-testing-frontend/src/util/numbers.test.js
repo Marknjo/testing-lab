@@ -28,4 +28,11 @@ it("should throw if an empty argument is provided", () => {
   expect(resultFn2).toThrowError(/Empty input provided/);
 });
 
-it.todo("should ignore more than one argument");
+it("should ignore more than one arguments, use only first", () => {
+  const num1 = "1";
+  const num2 = "2";
+
+  const result = transformToNumber(num1, num2);
+
+  expect(result).toBe(+num1);
+});
