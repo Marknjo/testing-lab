@@ -1,5 +1,9 @@
 export function validateStringNotEmpty(value) {
-  if (value === undefined || value?.trim().length === 0) {
+  if (value === undefined || typeof value !== "string") {
+    throw new Error("Invalid input type: Expects a string");
+  }
+
+  if (value?.trim().length === 0) {
     throw new Error("Invalid input - must not be empty.");
   }
 }
