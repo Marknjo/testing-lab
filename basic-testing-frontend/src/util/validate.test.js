@@ -1,5 +1,5 @@
 import { it, expect, describe } from "vitest";
-import { validateStringNotEmpty } from "./validation";
+import { validateNumber, validateStringNotEmpty } from "./validation";
 
 describe("validateStringNotEmpty() function", () => {
   it("should throw if supplied string is empty", () => {
@@ -33,7 +33,20 @@ describe("validateStringNotEmpty() function", () => {
   });
 });
 
-describe.todo("validateNumber() function", () => {
-  it.todo("should throw if supplied value is not a number", () => {});
+describe("validateNumber() function", () => {
+  it("should throw if supplied value is not a number", () => {
+    const input1 = "abc";
+    const input2 = [];
+    const input3 = undefined;
+
+    const returnFn1 = () => validateNumber(input1);
+    const returnFn2 = () => validateNumber(input2);
+    const returnFn3 = () => validateNumber(input3);
+
+    expect(returnFn1).toThrowError(/Invalid number/);
+    expect(returnFn2).toThrowError(/Invalid number/);
+    expect(returnFn3).toThrowError(/Invalid number/);
+  });
+
   it.todo("should be successful if supplied value is a number", () => {});
 });

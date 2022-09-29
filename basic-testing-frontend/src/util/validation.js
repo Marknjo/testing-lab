@@ -9,7 +9,7 @@ export function validateStringNotEmpty(value) {
 }
 
 export function validateNumber(number) {
-  if (isNaN(number)) {
+  if (typeof number !== "number" || isNaN(number)) {
     throw new Error("Invalid number input.");
   }
 }
