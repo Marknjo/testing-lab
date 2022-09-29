@@ -48,5 +48,11 @@ describe("validateNumber() function", () => {
     expect(returnFn3).toThrowError(/Invalid number/);
   });
 
-  it.todo("should be successful if supplied value is a number", () => {});
+  it("should not throw if supplied value is a number", () => {
+    const input = 1;
+
+    const returnFn = () => validateNumber(input);
+
+    expect(returnFn).not.toThrow();
+  });
 });
