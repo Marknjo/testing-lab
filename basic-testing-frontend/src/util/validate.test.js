@@ -13,7 +13,13 @@ describe("validateStringNotEmpty() function", () => {
     expect(returnFn2).toThrowError(/must not be empty/);
   });
 
-  it.todo("should be successful if string length is greater than 1", () => {});
+  it("should not throw if string length is greater than 1", () => {
+    const input = "test";
+
+    const returnFn = () => validateStringNotEmpty(input);
+
+    expect(returnFn).not.toThrow();
+  });
 
   it.todo("should throw if supplied value is not a string", () => {});
 
