@@ -1,0 +1,24 @@
+{
+  "name": "testing-course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "vitest",
+    "test:co": "vitest --coverage",
+    "test:ui": "vitest --ui",
+    "test:vb": "vitest --reporter verbose",
+    "test:once": "vitest run --reporter verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.23.4",
+    "vitest": "^0.23.4"
+  }
+}
