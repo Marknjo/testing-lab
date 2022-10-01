@@ -14,7 +14,9 @@ vi.mock("path", () => {
 });
 vi.mock("fs");
 
-afterEach(() => {
+vi.mock("fs");
+
+afterAll(() => {
   vi.resetAllMocks();
 });
 
@@ -26,6 +28,13 @@ it("should execute the write method", () => {
   writeData(testData, testFilename);
 
   //expect(resultsFn).resolves.toBeUndefined();
-  expect(fs.writeFile).toBeCalled();
+  // expect(fs.writeFile).toBeCalled();
   expect(fs.writeFile).toBeCalledWith(testFilename, testData);
+});
+
+it("should return a promise that resolves to no value", () => {
+  const testData = "test";
+  const testFilename = "test.txt";
+
+  return expect(writeData(testData, testFilename)).resolves.toBeUndefined();
 });
