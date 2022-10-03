@@ -1,5 +1,6 @@
 import { it, expect, vi, afterAll, afterEach } from "vitest";
-import { promises as fs } from "fs";
+// import { promises as fs } from "fs";
+import fs from "fs/promises";
 
 import writeData from "./io";
 
@@ -12,9 +13,9 @@ vi.mock("path", () => {
     },
   };
 });
-vi.mock("fs");
+vi.mock("fs/promises");
 
-vi.mock("fs");
+// vi.mock("fs");
 
 afterAll(() => {
   vi.resetAllMocks();
