@@ -5,6 +5,10 @@ const testResponseData = { testKey: "testData" };
 
 const testFetch = vi.fn((url, options) => {
   return new Promise((resolve, reject) => {
+    if (typeof options.body !== "string") {
+      return reject("Not a string");
+    }
+
     resolve({
       ok: true,
       json() {
@@ -24,6 +28,20 @@ describe("sendDataRequest()", () => {
       key: "test",
     };
 
-    expect(sendDataRequest(testData)).resolves.toEqual(testResponseData);
+    return expect(sendDataRequest(testData)).resolves.toEqual(testResponseData);
+  });
+
+  it("should convert data to JSON object(string)", async () => {
+    const testData = { key: "test" };
+
+    let errorMessage;
+
+    try {
+      await sendDataRequest(testData);
+    } catch (error) {
+      errorMessage = error;
+    }
+
+    expect(errorMessage).not.toBe("Not a string");
   });
 });
