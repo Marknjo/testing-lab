@@ -1,0 +1,23 @@
+{
+  "name": "mocks-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:http": "http-server -c-1",
+    "start": "vite",
+    "test": "vitest --run",
+    "test:vb": "vitest --reporter verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "happy-dom": "^7.0.2",
+    "vitest": "^0.23.4",
+    "vite": "^3.1.6"
+  }
+}
