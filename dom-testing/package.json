@@ -6,7 +6,8 @@
   "scripts": {
     "start:http": "http-server -c-1",
     "start:dev": "vite",
-    "test": "vitest --run"
+    "test": "vitest --run",
+    "test:vb": "vitest --reporter verbose"
   },
   "keywords": [],
   "author": "",
