@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { it, describe, vi, expect } from "vitest";
+import { it, describe, vi, expect, beforeEach } from "vitest";
 import { Window } from "happy-dom";
 import { showError } from "./dom";
 
@@ -9,8 +9,11 @@ const htmlDocumentContent = fs.readFileSync(htmlDocPath).toString();
 
 const window = new Window();
 const document = window.document;
-document.write(htmlDocumentContent);
 
+beforeEach(() => {
+  document.body.innerHTML = "";
+  document.write(htmlDocumentContent);
+});
 vi.stubGlobal("document", document);
 
 describe("showError()", () => {
@@ -23,5 +26,12 @@ describe("showError()", () => {
     const errorParagraph = errorsEl.firstElementChild;
 
     expect(errorParagraph).not.toBeNull();
+  });
+
+  it("should not contain an error paragraph before error occurs", () => {
+    const errorsEl = document.getElementById("errors");
+    const errorParagraph = errorsEl.firstElementChild;
+
+    expect(errorParagraph).toBeNull();
   });
 });
