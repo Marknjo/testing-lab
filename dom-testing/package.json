@@ -7,7 +7,8 @@
     "start:http": "http-server -c-1",
     "start:dev": "vite",
     "test": "vitest --run",
-    "test:vb": "vitest --reporter verbose"
+    "test:vb": "vitest --reporter verbose",
+    "test:dom": "vitest --reporter verbose --environment happy-dom"
   },
   "keywords": [],
   "author": "",
