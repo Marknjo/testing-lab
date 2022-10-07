@@ -14,6 +14,7 @@ beforeEach(() => {
   document.body.innerHTML = "";
   document.write(htmlDocumentContent);
 });
+
 vi.stubGlobal("document", document);
 
 describe("showError()", () => {
@@ -33,5 +34,16 @@ describe("showError()", () => {
     const errorParagraph = errorsEl.firstElementChild;
 
     expect(errorParagraph).toBeNull();
+  });
+
+  it("should add an error text message to the ui", () => {
+    const errMsg = "test";
+
+    showError(errMsg);
+
+    const errorsEl = document.getElementById("errors");
+    const errorParagraph = errorsEl.firstElementChild;
+
+    expect(errorParagraph.innerText).toBe(errMsg);
   });
 });
